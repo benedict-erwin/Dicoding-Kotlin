@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="recycle_main" type="id">recycle_main</item>
+    <item name="img_club" type="id">img_club</item>
+    <item name="tx_club" type="id">tx_club</item>
+    <item name="logo_club" type="id">logo_club</item>
+    <item name="nama_club" type="id">nama_club</item>
+    <item name="desc_club" type="id">desc_club</item>
+</resources>
