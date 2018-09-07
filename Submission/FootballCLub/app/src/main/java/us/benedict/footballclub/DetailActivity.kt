@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.ImageView
 import android.widget.TextView
+import org.jetbrains.anko.find
 import org.jetbrains.anko.setContentView
 import us.benedict.footballclub.layout.DetailLayout
 
@@ -27,9 +28,9 @@ class DetailActivity  : AppCompatActivity(){
         var name: String = ""
         var img: Int = 0
         var desc: String = ""
-        var nameVw = findViewById<TextView>(R.id.nama_club)
-        var imgVw = findViewById<ImageView>(R.id.logo_club)
-        var descVw = findViewById<TextView>(R.id.desc_club)
+        var nameVw = find<TextView>(R.id.nama_club)
+        var imgVw = find<ImageView>(R.id.logo_club)
+        var descVw = find<TextView>(R.id.desc_club)
         val intent = intent
 
         /* Set Variable from passed data */

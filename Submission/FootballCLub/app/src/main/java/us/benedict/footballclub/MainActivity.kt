@@ -8,12 +8,13 @@
 
 package us.benedict.footballclub
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import org.jetbrains.anko.find
 import org.jetbrains.anko.setContentView
+import org.jetbrains.anko.startActivity
 import us.benedict.footballclub.adapter.RecyclerViewAdapter
 import us.benedict.footballclub.layout.MainLayout
 import us.benedict.footballclub.model.Item
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         MainLayout().setContentView(this)
 
         /* Set list as RecycleView and set view by id from MainLayout */
-        val list: RecyclerView = findViewById(R.id.recycle_main)
+        val list = find<RecyclerView>(R.id.recycle_main)
 
         /* Call initData Function */
         initData()
@@ -40,14 +41,8 @@ class MainActivity : AppCompatActivity() {
         /* Set RecycleView Adapter from items */
         list.adapter = RecyclerViewAdapter(applicationContext, items){
 
-            /* Set Intent with data*/
-            val intent = Intent(this,DetailActivity::class.java);
-            intent.putExtra("name", it.name)
-            intent.putExtra("image", it.image)
-            intent.putExtra("desc", it.desc)
-
-            /* Start DetailActivity */
-            startActivity(intent);
+            /* Start DetailActivity and pass data */
+            startActivity<DetailActivity>("name" to it.name, "image" to it.image, "desc" to it.desc)
         }
 
     }
