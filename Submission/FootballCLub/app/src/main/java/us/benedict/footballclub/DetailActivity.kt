@@ -10,36 +10,31 @@ package us.benedict.footballclub
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.ImageView
-import android.widget.TextView
-import org.jetbrains.anko.find
 import org.jetbrains.anko.setContentView
 import us.benedict.footballclub.layout.DetailLayout
 
 class DetailActivity  : AppCompatActivity(){
-
+    lateinit var detailLayout: DetailLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        /* Set Layout to DetailLayout*/
-        DetailLayout().setContentView(this)
 
-        /* Init Variable */
-        var name: String = ""
-        var img: Int = 0
-        var desc: String = ""
-        var nameVw = find<TextView>(R.id.nama_club)
-        var imgVw = find<ImageView>(R.id.logo_club)
-        var descVw = find<TextView>(R.id.desc_club)
+        /* Set Layout to DetailLayout*/
+        detailLayout = DetailLayout()
+        detailLayout.setContentView(this)
+
+        /* Init intent to get extra */
         val intent = intent
 
         /* Set Variable from passed data */
-        name = intent.getStringExtra("name")
-        img = intent.getIntExtra("image", 0)
-        desc = intent.getStringExtra("desc")
-        nameVw.text = name
-        imgVw.setImageResource(img)
-        descVw.text = desc
+        val name : String = intent.getStringExtra("name")
+        val img : Int = intent.getIntExtra("image", 0)
+        val desc : String = intent.getStringExtra("desc")
+
+        /* Set Layout content */
+        detailLayout.nama_club.text = name
+        detailLayout.logo_club.setImageResource(img)
+        detailLayout.desc_club.text = desc
     }
 
 }

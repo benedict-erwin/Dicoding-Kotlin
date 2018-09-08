@@ -13,7 +13,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import org.jetbrains.anko.*
 import us.benedict.footballclub.R
 
@@ -24,7 +26,7 @@ class ItemListLayout:AnkoComponent<ViewGroup>{
             layoutParams = LinearLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT)
             orientation = LinearLayout.HORIZONTAL
 
-            imageView{
+            imageView {
                 id = R.id.img_club
                 setImageResource(R.drawable.img_barca)
             }.lparams(width = dip(50), height = dip(50)){

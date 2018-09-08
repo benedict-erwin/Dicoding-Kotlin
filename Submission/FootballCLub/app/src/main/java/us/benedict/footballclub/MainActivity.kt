@@ -11,8 +11,6 @@ package us.benedict.footballclub
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import org.jetbrains.anko.find
 import org.jetbrains.anko.setContentView
 import org.jetbrains.anko.startActivity
 import us.benedict.footballclub.adapter.RecyclerViewAdapter
@@ -20,17 +18,23 @@ import us.benedict.footballclub.layout.MainLayout
 import us.benedict.footballclub.model.Item
 
 class MainActivity : AppCompatActivity() {
+    /* Lateinit mainLayout as MainLayout */
+    lateinit var mainLayout : MainLayout
+
     /* ArrayList from model/Item */
     private var items: ArrayList<Item> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        /* Set ContentView from MainLayout*/
-        MainLayout().setContentView(this)
+        /* Set mainLayout as MainLayout */
+        mainLayout = MainLayout()
 
-        /* Set list as RecycleView and set view by id from MainLayout */
-        val list = find<RecyclerView>(R.id.recycle_main)
+        /* Set ContentView from MainLayout*/
+        mainLayout.setContentView(this)
+
+        /* Set list as RecycleView from MainLayout recyView */
+        val list = mainLayout.recycle_main
 
         /* Call initData Function */
         initData()
@@ -49,6 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     /* Function initData - populate items data */
     private fun initData(){
+        /* Get value from strings.xml */
         val name = resources.getStringArray(R.array.club_name)
         val image = resources.obtainTypedArray(R.array.club_img)
         val desc = resources.getStringArray(R.array.club_desc)

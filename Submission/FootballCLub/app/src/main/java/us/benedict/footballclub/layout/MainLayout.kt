@@ -8,6 +8,7 @@
 
 package us.benedict.footballclub.layout
 
+import android.support.v7.widget.RecyclerView
 import android.view.View
 import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
@@ -15,11 +16,10 @@ import us.benedict.footballclub.MainActivity
 import us.benedict.footballclub.R
 
 class MainLayout:AnkoComponent<MainActivity>{
+    lateinit var recycle_main: RecyclerView
     override fun createView(ui: AnkoContext<MainActivity>): View = with(ui){
         verticalLayout {
-            recyclerView {
-                id = R.id.recycle_main
-            }.lparams(width= matchParent, height = wrapContent)
+            recycle_main = recyclerView {}.lparams(width= matchParent, height = wrapContent)
         }
     }
 }

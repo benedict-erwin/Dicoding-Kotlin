@@ -47,9 +47,8 @@ class RecyclerViewAdapter(val context: Context, var list: ArrayList<Item> = arra
 
     /* Class ItemViewHolder */
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        var club_img: ImageView
-        var club_text: TextView
+        var club_img : ImageView
+        var club_text : TextView
 
         init {
             club_img = itemView.findViewById(R.id.img_club)
