@@ -1,8 +1,9 @@
 /*
 *
-* Submission 1 : Aplikasi Football Club
-* Author : Benedict E. Pranata (benedict.erwin@gmail.com)
-* Date: 5 September 2018
+* Submission 1  : Aplikasi Football Club
+* Author        : Benedict E. Pranata (benedict.erwin@gmail.com)
+* cDate         : 5 September 2018
+* Rev           : 5 - 10 September 2018
 *
 * */
 
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         mainLayout.setContentView(this)
 
         /* Set list as RecycleView from MainLayout recyView */
-        val list = mainLayout.recycle_main
+        val list = mainLayout.recycleMain
 
         /* Call initData Function */
         initData()
@@ -54,9 +55,9 @@ class MainActivity : AppCompatActivity() {
     /* Function initData - populate items data */
     private fun initData(){
         /* Get value from strings.xml */
-        val name = resources.getStringArray(R.array.club_name)
-        val image = resources.obtainTypedArray(R.array.club_img)
-        val desc = resources.getStringArray(R.array.club_desc)
+        val name = resources.getStringArray(R.array.clubNama)
+        val image = resources.obtainTypedArray(R.array.clubImg)
+        val desc = resources.getStringArray(R.array.clubDesc)
 
         items.clear()
         for (i in name.indices) {

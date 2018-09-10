@@ -1,8 +1,9 @@
 /*
 *
-* Submission 1 : Aplikasi Football Club
-* Author : Benedict E. Pranata (benedict.erwin@gmail.com)
-* Date: 5 September 2018
+* Submission 1  : Aplikasi Football Club
+* Author        : Benedict E. Pranata (benedict.erwin@gmail.com)
+* cDate         : 5 September 2018
+* Rev           : 5 - 10 September 2018
 *
 * */
 
@@ -13,9 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
-import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
 import org.jetbrains.anko.*
 import us.benedict.footballclub.R
 
@@ -27,14 +26,14 @@ class ItemListLayout:AnkoComponent<ViewGroup>{
             orientation = LinearLayout.HORIZONTAL
 
             imageView {
-                id = R.id.img_club
+                id = R.id.imageClub
                 setImageResource(R.drawable.img_barca)
             }.lparams(width = dip(50), height = dip(50)){
                 margin = dip(10)
             }
 
             textView {
-                id = R.id.tx_club
+                id = R.id.textClub
                 text = "Barcelona FC"
             }.lparams(width = wrapContent, height = wrapContent){
                 margin = dip(10)

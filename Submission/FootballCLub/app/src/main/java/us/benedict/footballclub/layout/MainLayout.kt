@@ -1,8 +1,9 @@
 /*
 *
-* Submission 1 : Aplikasi Football Club
-* Author : Benedict E. Pranata (benedict.erwin@gmail.com)
-* Date: 5 September 2018
+* Submission 1  : Aplikasi Football Club
+* Author        : Benedict E. Pranata (benedict.erwin@gmail.com)
+* cDate         : 5 September 2018
+* Rev           : 5 - 10 September 2018
 *
 * */
 
@@ -13,13 +14,12 @@ import android.view.View
 import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
 import us.benedict.footballclub.MainActivity
-import us.benedict.footballclub.R
 
 class MainLayout:AnkoComponent<MainActivity>{
-    lateinit var recycle_main: RecyclerView
+    lateinit var recycleMain: RecyclerView
     override fun createView(ui: AnkoContext<MainActivity>): View = with(ui){
         verticalLayout {
-            recycle_main = recyclerView {}.lparams(width= matchParent, height = wrapContent)
+            recycleMain = recyclerView {}.lparams(width= matchParent, height = wrapContent)
         }
     }
 }

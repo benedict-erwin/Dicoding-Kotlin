@@ -1,8 +1,9 @@
 /*
 *
-* Submission 1 : Aplikasi Football Club
-* Author : Benedict E. Pranata (benedict.erwin@gmail.com)
-* Date: 5 September 2018
+* Submission 1  : Aplikasi Football Club
+* Author        : Benedict E. Pranata (benedict.erwin@gmail.com)
+* cDate         : 5 September 2018
+* Rev           : 5 - 10 September 2018
 *
 * */
 
@@ -35,8 +36,8 @@ class RecyclerViewAdapter(val context: Context, var list: ArrayList<Item> = arra
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val club = list[position]
-        Glide.with(context).load(club.image).into(holder.club_img)
-        holder.club_text.text = "${club.name}"
+        Glide.with(context).load(club.image).into(holder.clubImg)
+        holder.clubText.text = "${club.name}"
         holder.bindItem(club, listener)
     }
 
@@ -47,12 +48,12 @@ class RecyclerViewAdapter(val context: Context, var list: ArrayList<Item> = arra
 
     /* Class ItemViewHolder */
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var club_img : ImageView
-        var club_text : TextView
+        var clubImg : ImageView
+        var clubText : TextView
 
         init {
-            club_img = itemView.findViewById(R.id.img_club)
-            club_text = itemView.findViewById(R.id.tx_club)
+            clubImg = itemView.findViewById(R.id.imageClub)
+            clubText = itemView.findViewById(R.id.textClub)
         }
 
         /* Method untuk set Listener */
