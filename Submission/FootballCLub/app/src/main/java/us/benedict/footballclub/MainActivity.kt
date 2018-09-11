@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         list.adapter = RecyclerViewAdapter(applicationContext, items){
 
             /* Start DetailActivity and pass data */
-            startActivity<DetailActivity>("name" to it.name, "image" to it.image, "desc" to it.desc)
+            startActivity<DetailActivity>("item" to it)
         }
 
     }

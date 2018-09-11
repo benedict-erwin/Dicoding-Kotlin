@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import org.jetbrains.anko.setContentView
 import us.benedict.footballclub.layout.DetailLayout
+import us.benedict.footballclub.model.Item
 
 class DetailActivity()  : AppCompatActivity(){
     lateinit var detailLayout: DetailLayout
@@ -25,18 +26,16 @@ class DetailActivity()  : AppCompatActivity(){
         detailLayout = DetailLayout()
         detailLayout.setContentView(this)
 
-        /* Init intent to get extra */
+        /* Init intent to get data */
         val intent = intent
 
-        /* Set Variable from passed data */
-        val name : String = intent.getStringExtra("name")
-        val img : Int = intent.getIntExtra("image", 0)
-        val desc : String = intent.getStringExtra("desc")
+        /* Get data as parcelable */
+        val item = intent.getParcelableExtra<Item>("item") as Item
 
         /* Set Layout content */
-        detailLayout.namaClub.text = name
-        Glide.with(this).load(img).into(detailLayout.logoClub)
-        detailLayout.descClub.text = desc
+        detailLayout.namaClub.text = item.name
+        Glide.with(this).load(item.image).into(detailLayout.logoClub)
+        detailLayout.descClub.text = item.desc
     }
 
 }
